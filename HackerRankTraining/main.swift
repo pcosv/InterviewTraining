@@ -8,5 +8,22 @@
 
 import Foundation
 
-print("Hello, World!")
-
+func rotLeft(a: [Int], d: Int) -> [Int] {
+    
+    if d == a.count {
+        return a
+        
+    } else if d > a.count {
+        // entrada inválida
+        return a
+        
+    } else {
+        var arrayOut = a
+        for i in 0...d - 1{
+            let elementInRotation = a[i]
+            arrayOut.removeFirst()
+            arrayOut.append(elementInRotation)
+        }
+        return arrayOut
+    }
+}
