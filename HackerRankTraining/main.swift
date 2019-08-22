@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+// Arrays: Left Rotation
+
 func rotLeft(a: [Int], d: Int) -> [Int] {
     
     if d == a.count {
@@ -26,4 +29,26 @@ func rotLeft(a: [Int], d: Int) -> [Int] {
         }
         return arrayOut
     }
+}
+
+// Strings: Making Anagrams
+
+func makeAnagram(a: String, b: String) -> Int {
+    var dictA: [String: Int] = [:]
+    var dictB: [String: Int] = [:]
+
+    
+    // 1. varre a string a colocando num dicionário a quantidade de aparições de cada caracter
+    // 2. varre a string b colocando num dicionário a quantidade de aparições de cada caracter
+    // 3. compara os dois dicionários
+    
+    for charA in a {
+        // verifica se charA já está no dicionário, se tiver, faz +1 no valor, senão, adiciona charA como chave do valor 0
+    }
+    
+    for charB in b {
+        // verifica se charB já está no dicionário, se tiver, faz +1 no valor, senão, adiciona charB como chave do valor 0
+    }
+    
+    return 0
 }
