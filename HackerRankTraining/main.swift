@@ -52,3 +52,16 @@ func makeAnagram(a: String, b: String) -> Int {
     
     return 0
 }
+
+// String: Alternating Characters
+
+func alternatingCharacters(s: String) -> Int {
+    var deletions = 0
+    var arrayString = Array(s)
+    for index in 1...(arrayString.count - 1) {
+        if arrayString[index] == arrayString[index - 1] {
+            deletions += 1
+        }
+    }
+    return deletions
+}
