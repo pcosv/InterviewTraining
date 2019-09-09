@@ -9,7 +9,7 @@
 import Foundation
 
 
-// Arrays: Left Rotation
+// [HackerHank] Arrays: Left Rotation
 
 func rotLeft(a: [Int], d: Int) -> [Int] {
     
@@ -31,7 +31,7 @@ func rotLeft(a: [Int], d: Int) -> [Int] {
     }
 }
 
-// Strings: Making Anagrams
+// [HackerHank] Strings: Making Anagrams
 
 func makeAnagram(a: String, b: String) -> Int {
     var dictA: [String: Int] = [:]
@@ -53,7 +53,7 @@ func makeAnagram(a: String, b: String) -> Int {
     return 0
 }
 
-// String: Alternating Characters
+// [HackerHank] String: Alternating Characters
 
 func alternatingCharacters(s: String) -> Int {
     var deletions = 0
@@ -64,4 +64,34 @@ func alternatingCharacters(s: String) -> Int {
         }
     }
     return deletions
+}
+
+// [LeetCode] Arrays: Monotonic Array
+
+func isMonotonic(_ A: [Int]) -> Bool {
+    
+    var isIncreasing = true
+    var isDecreasing = true
+    
+    if A.count > 1{
+        for num in 1...(A.count - 1) {
+            
+            if A[num] == A[num - 1] {
+                // do nothing
+            } else if A[num] > A[num - 1] && isIncreasing == true{
+                isDecreasing = false
+            } else if A[num] < A[num - 1] && isDecreasing == true {
+                isIncreasing = false
+            } else {
+                isDecreasing = false
+                isIncreasing = false
+            }
+        }
+    }
+    
+    if isIncreasing == true || isDecreasing == true {
+        return true
+    } else {
+        return false
+    }
 }
