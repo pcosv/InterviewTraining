@@ -95,3 +95,21 @@ func isMonotonic(_ A: [Int]) -> Bool {
         return false
     }
 }
+
+// [LeetCode] Strings: Valid Palindrome
+
+func isPalindrome(_ s: String) -> Bool {
+    var charArray = [Character]()
+    for ch in s {
+        if ch.isLetter || ch.isNumber{
+            charArray.append(Character(ch.lowercased()))
+        }
+    }
+    if charArray == charArray.reversed(){
+        return true
+    } else {
+        return false
+    }
+}
+
+print(isPalindrome("OP"))
